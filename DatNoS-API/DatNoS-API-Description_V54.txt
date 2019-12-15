@@ -1,0 +1,39 @@
+(C) 2019 - baumann.at
+
+DatNoS - Data Notarization Service - API - V0.54 (9/2019)
+============================================================
+
+Data sent to this API will be stored in a blockchain stream and thus notarized.
+
+The API call uses http/s POST.
+
+The service can be reached at:
+https://test.baumann.at/dev9/datnos-api/ (Development)
+and
+https://blockchains.web-lab.at/datnos-api/ (Testing)
+
+To authenticate against the service, the client has to include the following http header:
+X-ApiToken: 6b838c1824...59572934273 
+[Your API-Token will be sent to you by Chris Baumann]
+
+The payload uses the following JSON structure (example):
+{
+"keys":["ABC-4711","APIv2test"],
+"data":{
+	"timeStamp":"2018-12-30T15:29:40+01:00",
+	"someId":"ABC-4711",
+	"someValue":123,
+	"someText":"Hello ..."
+}}
+
+"keys" will be used as keys in the blockchain stream (similar to a database, e.g. for quicker search), any number of keys can be used.
+"data" can hold any arbitrary data. It is recommended, that a timeStamp is also used.
+
+A webpage to view the data stored in the DatNoS blockchain can be reached here:
+https://blockchains.web-lab.at/datnos/
+
+Have fun ;-)
+Chris
+
+
+
